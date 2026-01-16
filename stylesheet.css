@@ -48,6 +48,15 @@ body {
     gap: 40px;
 }
 
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .profile-content {
     flex: 1;
 }
@@ -108,6 +117,18 @@ body {
 }
 
 @media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+    }
+
     .name {
         font-size: 28px;
     }
@@ -116,9 +137,14 @@ body {
         font-size: 16px;
     }
 
+    .bio {
+        text-align: center;
+    }
+
     .contact-info {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
     }
 }
 
