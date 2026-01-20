@@ -127,6 +127,30 @@
             <h2 class="section-title">Selected Projects</h2>
 
             <div class="project-entry">
+                <h3 class="project-title">
+                    Contract Clause Analyzer
+                    <a href="http://35.178.58.160/" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/vrk7/Contract-Management-Tool" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </h3>
+                <p class="project-tech"><strong>Technologies:</strong> FastAPI, React 18, PostgreSQL, ChromaDB, Claude API, Docker, Nginx, SQLAlchemy, Vite</p>
+                <ul class="entry-details">
+                    <li><strong>AI-Powered Analysis Pipeline:</strong> Built production-grade async FastAPI service with multi-step deterministic pipeline combining regex-based clause extraction, RAG retrieval from versioned playbook chunks, heuristic deviation scoring, and optional LLM validation via Claude Sonnet 4 with streaming responses.</li>
+                    <li><strong>Advanced RAG Implementation:</strong> Architected immutable playbook versioning system with ChromaDB vector store (all-MiniLM-L6-v2 embeddings), 800-word sliding window chunking, grounding enforcement requiring chunk citations for every finding, and hot reindexing without downtime.</li>
+                    <li><strong>Real-Time Streaming Architecture:</strong> Implemented Server-Sent Events (SSE) with custom EventBus using asyncio.Queue for live status updates, partial findings, and final results, with Nginx configured for unbuffered SSE passthrough and 100% async/await throughout backend.</li>
+                    <li><strong>Multi-Layer Security:</strong> Hardened service with prompt-injection defense (regex content filtering), per-IP rate limiting (SlowAPI), strict Pydantic schema validation, grounding checks dropping ungrounded findings, and CORS middleware for controlled access.</li>
+                    <li><strong>Database Flexibility:</strong> Designed auto-detection system using PostgreSQL 15 (production) with async SQLAlchemy ORM in Docker, SQLite with aiosqlite and WAL mode for local development, handling postgres+asyncpg → postgresql+asyncpg conversion and automatic data directory creation.</li>
+                    <li><strong>Cost & Usage Tracking:</strong> Implemented token counting for Claude API calls with estimated cost calculation ($0.000015/input, $0.000075/output token), per-analysis usage metrics surfaced in UI and API responses, enabling offline testing with heuristic fallback when API key not configured.</li>
+                    <li><strong>Production Deployment:</strong> Deployed on AWS EC2 with Docker Compose orchestration (4 services: db, backend, frontend, nginx), multi-stage builds with Node 20-slim and Nginx Alpine, health checks with automatic playbook seeding, and graceful embedding rebuild on volume loss.</li>
+                    <li><strong>Testing & Quality:</strong> Built comprehensive test suite with pytest-asyncio, FastAPI TestClient, integration tests for health checks, analysis flow, guardrail triggers, rate limiting, and offline mode (BYPASS_DB_FOR_TESTS), with Python 3.12 compatibility patches.</li>
+                </ul>
+                <p class="project-stats"><strong>Project Scale:</strong> 13 Python modules (~1,200 LOC), 10 REST endpoints, 6 React components, 7 clause types analyzed (payment terms, retainage, notice periods, indemnification, termination, dispute resolution, liquidated damages)</p>
+            </div>
+
+            <div class="project-entry">
                 <h3 class="project-title">Malayalam Voice Agent</h3>
                 <p class="project-tech"><strong>Technologies:</strong> FastAPI, WebSockets, VAD, STT, LLM, TTS</p>
                 <ul class="entry-details">
@@ -141,15 +165,6 @@
                 <ul class="entry-details">
                     <li>Wrapped Anthropic's computer-use agent loop in a session-centric FastAPI service with per-session locking, durable chat history, and persistent screenshots for multi-turn execution.</li>
                     <li>Streamed assistant deltas and tool results over SSE while packaging a lightweight HTML/JS demo with embedded noVNC using Docker Compose for rapid local simulation.</li>
-                </ul>
-            </div>
-
-            <div class="project-entry">
-                <h3 class="project-title">Contract Clause Analyzer</h3>
-                <p class="project-tech"><strong>Technologies:</strong> FastAPI, React, Postgres, Chroma, Docker</p>
-                <ul class="entry-details">
-                    <li>Built a centralized contract clause analysis system using prompt-injection defenses, strict Pydantic schema validation, per-user rate limiting, and token usage/cost tracking backed by Postgres/SQLite.</li>
-                    <li>Hardened service with prompt-injection defenses, strict Pydantic schema validation, per-IP rate limiting, and token usage/cost tracking backed by Postgres/SQLite.</li>
                 </ul>
             </div>
         </section>
@@ -192,17 +207,17 @@
             <div class="skills-container">
                 <div class="skill-group">
                     <h3 class="skill-group-title">Backend / Full Stack</h3>
-                    <p class="skill-items">Python, FastAPI, Node.js, TypeScript, Next.js, MongoDB, PostgreSQL, Redis, React</p>
+                    <p class="skill-items">Python, FastAPI, Node.js, TypeScript, Next.js, MongoDB, PostgreSQL, Redis, React, SQLAlchemy, Uvicorn</p>
                 </div>
 
                 <div class="skill-group">
-                    <h3 class="skill-group-title">Machine Learning</h3>
-                    <p class="skill-items">PyTorch, TensorFlow, Scikit-learn, Numpy, OpenCV</p>
+                    <h3 class="skill-group-title">Machine Learning & AI</h3>
+                    <p class="skill-items">PyTorch, TensorFlow, Scikit-learn, Numpy, OpenCV, LangChain, ChromaDB, Claude API, RAG, Vector Embeddings</p>
                 </div>
 
                 <div class="skill-group">
                     <h3 class="skill-group-title">Tools & DevOps</h3>
-                    <p class="skill-items">Docker, AWS, Git, GitHub Actions, SQLAlchemy, LangChain, ChromaDB, Prometheus</p>
+                    <p class="skill-items">Docker, AWS (EC2), Git, GitHub Actions, Nginx, Pytest, Vite, Prometheus, Server-Sent Events (SSE)</p>
                 </div>
             </div>
         </section>
@@ -214,4 +229,3 @@
     </div>
 </body>
 </html>
-
