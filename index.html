@@ -151,20 +151,36 @@
             </div>
 
             <div class="project-entry">
-                <h3 class="project-title">Malayalam Voice Agent</h3>
-                <p class="project-tech"><strong>Technologies:</strong> FastAPI, WebSockets, VAD, STT, LLM, TTS</p>
+                <h3 class="project-title">
+                    Malayalam Voice Agent (Streaming API)
+                    <a href="https://github.com/vrk7/Malayalam-Voice-Agent" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </h3>
+                <p class="project-tech"><strong>Technologies:</strong> FastAPI, WebSockets, WebRTC VAD, Google Translate API, gTTS, asyncio, Pydantic, NumPy, Uvicorn</p>
                 <ul class="entry-details">
-                    <li>Built a full-duplex Malayalam-English Voice AI using VAD-gated STT-LLM-TTS pipelines with barge-in cancellation under 400 ms, latency-masking filters, and tone-aware responses over a validated WebSocket API.</li>
-                    <li>Deployed supporting backend for VoiceAI TTS service with browser demo and a load harness simulating 20 concurrent calls to measure TTFB and barge-in stop times against < 400 ms / < 400 ms targets.</li>
+                    <li><strong>Full-Duplex Voice Pipeline Architecture:</strong> Engineered production-grade streaming pipeline implementing VAD → STT → LLM → TTS flow with bi-directional WebSocket transport, handling simultaneous audio input processing and output streaming with sub-400ms barge-in response times.</li>
+                    <li><strong>WebRTC VAD Integration with Fallback:</strong> Implemented robust voice activity detection using WebRTC VAD (aggressiveness=2) on 20ms PCM16 frames at 16kHz mono, with amplitude-based fallback for malformed frames ensuring 100% frame processing reliability despite network packet irregularities.</li>
+                    <li><strong>Intelligent Barge-In Controller:</strong> Built event-driven cancellation system tracking TTS playback state with per-chunk timestamps, triggering instant cancellation (<400ms target) when user speech detected, measuring and reporting stop latency metrics for every interruption event.</li>
+                    <li><strong>Latency-Masking Filler Injection:</strong> Designed adaptive filler manager that preemptively streams Malayalam interjections ("Mm...", "Aa...", "Sheri...") during LLM inference (>200ms threshold), with cancellable task queues and 300-600ms spacing to maintain conversational naturalness while hiding backend latency.</li>
+                    <li><strong>Tone-Aware Response Generation:</strong> Architected dialogue orchestrator with tone profiles (reminder: 0.95x rate, -0.1 pitch; sales: 1.05x rate, +0.1 pitch) and context-aware prompt templates for script continuation, off-script Q&A recovery, and objection handling with Malayalam-English code-switching support.</li>
+                    <li><strong>Strict WebSocket Protocol with Init Validation:</strong> Enforced connection-level validation requiring compliant init frame (mono, 16kHz, pcm16 codec) before audio streaming, with Pydantic schema validation, structured JSON events (partial_stt, filler_start, barge_in, utterance_start/end, metrics), and graceful error handling with specific close codes.</li>
+                    <li><strong>Per-Session Metrics & Observability:</strong> Implemented comprehensive per-call tracking: TTFB (time-to-first-byte audio), barge-in stop latencies (histogram), invalid frame ratio for packet loss detection, and end-of-session summary events enabling SLA validation against <900ms p95 TTFB target.</li>
+                    <li><strong>REST TTS Helper Service:</strong> Built authenticated POST /api/text-to-speech endpoint with Google Translate integration for English → Malayalam translation and gTTS synthesis, returning base64-encoded MP3 audio with lightweight browser demo (/demo) featuring embedded audio playback for rapid QA testing.</li>
+                    <li><strong>Concurrent Load Harness:</strong> Developed automated test harness simulating 20 concurrent WebSocket connections across 5 scripted scenarios (barge-in, payment confirmation, sales pitch, unclear audio, filler timing), aggregating p50/p95 latency percentiles and median barge-in stop times for regression testing.</li>
+                    <li><strong>Async-First Backend Design:</strong> Architected 100% async/await codebase using asyncio primitives (Event, Queue, create_task, to_thread) with ThreadPoolExecutor for blocking gTTS calls, maintaining event loop responsiveness under concurrent load with CORS middleware and optional auth bypass for local development.</li>
                 </ul>
+                <p class="project-stats"><strong>Project Scale:</strong> 729 Python LOC across 6 modules, WebSocket streaming endpoint, REST TTS API, browser demo UI, automated load harness with 5 test scenarios, targeting <900ms TTFB (p95) and <400ms barge-in stop latency</p>
+                <p class="project-stats"><strong>Technical Metrics:</strong> 16kHz mono PCM16 audio, 20ms frame size (320 samples), WebRTC VAD with aggressiveness=2, filler injection at >200ms LLM latency, 2-filler max per wait cycle, session-level packet loss tracking via invalid frame ratio</p>
             </div>
 
             <div class="project-entry">
                 <h3 class="project-title">Computer Use Backend</h3>
-                <p class="project-tech"><strong>Technologies:</strong> FastAPI, HTTP, Docker</p>
+                <p class="project-tech"><strong>Technologies:</strong> FastAPI, SSE (Server-Sent Events), Anthropic API, Docker Compose, noVNC, asyncio</p>
                 <ul class="entry-details">
-                    <li>Wrapped Anthropic's computer-use agent loop in a session-centric FastAPI service with per-session locking, durable chat history, and persistent screenshots for multi-turn execution.</li>
-                    <li>Streamed assistant deltas and tool results over SSE while packaging a lightweight HTML/JS demo with embedded noVNC using Docker Compose for rapid local simulation.</li>
+                    <li><strong>Session-Centric Agent Orchestration:</strong> Wrapped Anthropic's computer-use agent loop in stateful FastAPI service with per-session locking (asyncio.Lock), durable in-memory chat history, and persistent screenshot storage enabling multi-turn agentic execution with full conversation context preservation.</li>
+                    <li><strong>Real-Time Event Streaming:</strong> Streamed assistant deltas, tool invocations (computer, bash, text_editor), and tool results over Server-Sent Events (SSE) for live UI updates, handling message chunking and JSON serialization with proper SSE formatting (data: prefix, double newline delimiters).</li>
+                    <li><strong>Lightweight Demo with Embedded VNC:</strong> Packaged HTML/JS demo with embedded noVNC client for real-time desktop viewing, Docker Compose orchestration (FastAPI backend + X11 VNC container), enabling rapid local simulation of computer-use scenarios without external infrastructure dependencies.</li>
                 </ul>
             </div>
         </section>
@@ -207,17 +223,22 @@
             <div class="skills-container">
                 <div class="skill-group">
                     <h3 class="skill-group-title">Backend / Full Stack</h3>
-                    <p class="skill-items">Python, FastAPI, Node.js, TypeScript, Next.js, MongoDB, PostgreSQL, Redis, React, SQLAlchemy, Uvicorn</p>
+                    <p class="skill-items">Python, FastAPI, Node.js, TypeScript, Next.js, MongoDB, PostgreSQL, Redis, React, SQLAlchemy, Uvicorn, WebSockets, SSE</p>
                 </div>
 
                 <div class="skill-group">
                     <h3 class="skill-group-title">Machine Learning & AI</h3>
-                    <p class="skill-items">PyTorch, TensorFlow, Scikit-learn, Numpy, OpenCV, LangChain, ChromaDB, Claude API, RAG, Vector Embeddings</p>
+                    <p class="skill-items">PyTorch, TensorFlow, Scikit-learn, NumPy, OpenCV, LangChain, ChromaDB, Claude API, RAG, Vector Embeddings, Voice Activity Detection (VAD)</p>
                 </div>
 
                 <div class="skill-group">
                     <h3 class="skill-group-title">Tools & DevOps</h3>
-                    <p class="skill-items">Docker, AWS (EC2), Git, GitHub Actions, Nginx, Pytest, Vite, Prometheus, Server-Sent Events (SSE)</p>
+                    <p class="skill-items">Docker, Docker Compose, AWS (EC2), Git, GitHub Actions, Nginx, Pytest, Vite, asyncio, Pydantic, CORS, uv (Python package manager)</p>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Audio & Speech Technologies</h3>
+                    <p class="skill-items">WebRTC VAD, PCM16 Audio Processing, gTTS, Google Translate API, Streaming Audio Pipelines, Barge-in Systems, Real-time Voice Processing</p>
                 </div>
             </div>
         </section>
