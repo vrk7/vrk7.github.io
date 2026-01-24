@@ -1,0 +1,27 @@
+Subject: Application for Software Engineer Position at Isentroniq
+
+Dear Hiring Team,
+
+I'm writing to apply for the Software Engineer role at Isentroniq. The chance to build software that helps scale quantum computing is genuinely exciting to me. I've spent the last few years building full-stack AI systems, and the idea of applying those skills to help solve real hardware problems in quantum computing feels like exactly the kind of challenge I'm looking for.
+
+I'm a full-stack engineer with solid experience across the entire stack. I've built production systems with FastAPI backends, React frontends, PostgreSQL databases, and deployed them on AWS with Docker. At Sony, I worked on semantic retrieval systems with distributed computing workflows on SLURM clusters. At Kontex.dev, I built vector indexing systems and data pipelines that cut latency in half. My Contract Clause Analyzer project shows the kind of end-to-end work I enjoy - I built the whole thing from the database schema and FastAPI backend to the React UI, complete with Docker deployment and CI/CD.
+
+What draws me to this role is the mix of building simulation tools and working directly with hardware teams. I have a strong background in Python for scientific computing from my ML work, and I'm comfortable building the kind of data acquisition pipelines you need. My experience with real-time systems (like the voice agent I built with sub-400ms response times) and working with structured databases gives me a good foundation for handling quantum measurement data.
+
+I'll be honest - I haven't worked with InfluxDB or Grafana specifically, but I've worked with similar observability stacks and I'm a quick learner. I also completed my M2 at Ecole Polytechnique in France, so I have some French exposure, though I'd need to brush up on technical French for daily work.
+
+What I really connect with is your culture. I like teams where people challenge ideas openly and aren't afraid to start from scratch when needed. In my projects, I've always preferred building the right thing over doing the easy thing, and I appreciate places where you can admit mistakes and learn from them.
+
+I know you're looking for 5+ years of front-end experience specifically, and while I have solid React skills and have built multiple production UIs, I'm earlier in my career. But what I lack in years, I make up for in fundamentals - I write clean code, test thoroughly, document properly, and I'm genuinely excited about the chance to work on something as impactful as making quantum computing scalable.
+
+I'd love to talk more about how I can contribute to Isentroniq's mission. You can check out my projects on GitHub (github.com/vrk7) to see my code quality and approach to building things.
+
+Thanks for considering my application. I'm really excited about this opportunity.
+
+Best,
+Vysakh Ramakrishnan
++44-7788291429
+vysakhramakrishnan7@gmail.com
+Portfolio: https://vrk7.github.io
+GitHub: https://github.com/vrk7
+LinkedIn: https://linkedin.com/in/vysakh-ramakrishnan
