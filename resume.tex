@@ -1,0 +1,254 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{ragged2e}
+\usepackage[letterpaper,left=0.50in,right=0.50in,top=0.45in,bottom=0.40in]{geometry}
+\usepackage{needspace}
+\usepackage[final]{microtype}
+\microtypesetup{protrusion=true, expansion=true}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\linespread{0.94}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0in}
+
+\setlist[itemize]{itemsep=0pt,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{itemsep=1pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+
+\titlespacing*{\section}{0pt}{-2pt}{2pt}
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{\justifying #1}}
+\newcommand{\classesList}[4]{\item\small{{#1 #2 #3 #4 \vspace{-2pt}}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{\small #2} \\
+    \textbf{\small #3} & \textbf{\small #4} \\
+  \end{tabularx}
+  \vspace{-3pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \Needspace{2\baselineskip}
+  \item
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \small #1 & \textbf{\small #2}\\
+  \end{tabularx}
+  \vspace{-4pt}
+}
+
+\newcommand{\resumeCourses}[1]{
+  \item\small{\textit{Relevant Courses:} #1}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
+
+%-------------------------------------------
+\begin{document}
+
+% ----------HEADING----------
+\begin{center}
+{\huge Vysakh Ramakrishnan}\\[0.2pt]
+\small +44-7788201429 \;|\;
+\href{mailto:vysakhramkrishnan7@gmail.com}{\textcolor{blue}{vysakhramkrishnan7@gmail.com}} \;|\;
+\href{https://vrk7.github.io/}{\textcolor{blue}{Portfolio}} \;|\;
+\href{https://www.linkedin.com/in/vysakh-ramakrishnan}{\textcolor{blue}{LinkedIn}} \;|\;
+\href{https://github.com/vrk7}{\textcolor{blue}{GitHub}} \;|\;
+\href{https://scholar.google.com/citations?user=thnJFoAAAAAJ&hl=en}{\textcolor{blue}{GScholar}}
+\end{center}
+\vspace{-1pt}
+
+
+%---------------------------- PROFILE SUMMARY ---------------------------
+\section{PROFILE SUMMARY}
+\begin{justify}
+\vspace{5pt}
+Full-stack engineer with experience across AI agent systems, microservices, and data pipelines. Strong background
+in TypeScript, Node.js, Python, Next.js, and cloud-native architectures, building production AI agents, scalable backend
+services, and RESTful APIs. Skilled in PostgreSQL, AWS, Docker, Kubernetes, and CI/CD automation. Experi-
+enced in secure API design, prompt-injection defenses, and sensitive data handling across production pipelines.
+\end{justify}
+\vspace{0.3pt}
+
+
+%-----------EXPERIENCE-----------
+\section{PROFESSIONAL EXPERIENCE}
+  \resumeSubHeadingListStart
+\vspace{5pt}
+
+\resumeSubheading
+  {Freelance}{November 2025 -- Ongoing}
+  {Full-Stack Engineer}{Remote}
+  \vspace{-5pt}
+  \resumeItemListStart
+      \resumeItem{\textbf{WhatsApp AI Lead Qualification \& Booking System} $|$ \emph{Next.js, TypeScript, Vercel AI SDK, Neon PostgreSQL, Drizzle ORM, Upstash Redis}}
+    \resumeItemListStart
+      \resumeItem{Built a production WhatsApp lead qualification bot on Next.js App Router using the Vercel AI SDK with swappable LLM providers, backed by Neon serverless PostgreSQL with Drizzle ORM for type-safe schema management and full conversation audit logging.}
+      \resumeItem{Engineered a \textbf{Redis reliability layer} on Upstash handling four concerns: Redis NX-based message deduplication (Meta double-sends), per-phone processing locks to eliminate race conditions on concurrent messages, sliding-window rate limiting (20 msg/hr), and a 40-message conversation history window with a 30-day TTL.}
+      \resumeItem{Built an agentic coach interface where the human coach (Harry) manages approvals via natural WhatsApp replies — an LLM tool-use loop interprets terse replies using \textbf{persistent Redis history}, tracks rejected slots to avoid re-proposing them, and on confirmation creates Google Calendar events with Meet links via the Google APIs, sending timezone-aware confirmations to both parties.}
+    \resumeItemListEnd
+    \vspace{7pt}
+    \resumeItem{\textbf{Malayalam Voice Agent for Customer Care Support} $|$ \emph{FastAPI, WebSockets, Python, Vitest}}
+    \resumeItemListStart
+      \resumeItem{Built a full-duplex Malayalam voice assistant (VAD→STT→LLM→TTS) with barge-in cancellation under 400 ms, latency-masking fillers, and tone-aware responses over a validated WebSocket API.}
+      \resumeItem{Built event-driven cancellation system tracking TTS playback state with per-chunk timestamps, triggering instant cancellation ($<400$ ms target) when user speech detected, measuring and reporting stop latency metrics for every interruption event.}
+      \resumeItem{Developed supporting tooling including a REST TTS service with browser demo and a load harness simulating 20 concurrent calls to measure TTFB and barge-in stop times against $<900$ ms / $<400$ ms targets.}
+    \resumeItemListEnd
+    \vspace{7pt}
+        \resumeItem{\textbf{AI-Guided Supplier Registration} $|$ \emph{Python, FastAPI, Claude API, Chrome Extension (MV3), JavaScript}}
+    \resumeItemListStart
+      \resumeItem{Built a Chrome extension paired with FastAPI backend that reads live DOM state and streams contextual next-step instructions via an on-page overlay, guiding users through a multi-step supplier registration form without auto-filling.}
+      \resumeItem{Designed a dual-LLM backend (Claude / GPT) with a single \texttt{/instruct} endpoint; content script extracts label-to-field associations across multiple DOM patterns and debounces context changes to minimise redundant API calls.}
+      \resumeItem{Implemented prompt-injection-safe prompt construction with strict output constraints, CORS-enabled service, and graceful handoff flow for the final review/submit state.}
+    \resumeItemListEnd
+    \vspace{7pt}
+    \resumeItem{\textbf{Computer Use Backend} $|$ \emph{FastAPI, TypeScript, SSE, SQLite, Docker}}
+    \resumeItemListStart
+      \resumeItem{Wrapped Anthropic's computer-use agent loop in a session-centric FastAPI service with per-session locking, durable chat history, and persisted tool outputs for reliable multi-turn automation.}
+      \resumeItem{Streamed assistant deltas and tool results over SSE while packaging a lightweight HTML/JS demo with embedded noVNC using Docker Compose for rapid local validation.}
+    \resumeItemListEnd
+    \vspace{7pt}
+    \resumeItem{\textbf{Legal Document Search Engine} $|$ \emph{Python, FastAPI, TypeScript, React, ChromaDB, PostgreSQL, SQLAlchemy, Nginx}}
+    \resumeItemListStart
+      \resumeItem{Built a legal document search engine using \textbf{FastAPI, React, and TypeScript} that ingests contracts and legal texts, embeds them into \textbf{ChromaDB}, stores document metadata in \textbf{MongoDB}, and enables semantic search across the corpus --- surfacing relevant clauses, flagging deviations from standard terms, and scoring risk via the LLM API with results streamed over SSE.}
+      \resumeItem{Architected immutable playbook versioning system with ChromaDB vector store, 800-word sliding window chunking, grounding enforcement requiring chunk citations for every finding, and hot reindexing without downtime.}
+      \resumeItem{Hardened the pipeline with prompt-injection defenses, strict Pydantic schema validation, grounding checks, per-IP rate limiting, and token usage/cost tracking backed by Postgres/SQLite.}
+      \resumeItem{Deployed on \textbf{AWS EC2} with Docker Compose orchestrating 4 services (Postgres, backend, frontend, Nginx), with automated health checks and container restart policies \textbf{ensuring 99.9\% uptime}, automated database seeding, and end-to-end test coverage using Pytest and Vitest.}
+    \resumeItemListEnd
+  \resumeItemListEnd
+        \vspace{14pt}
+
+
+  \resumeSubheading
+      {Sony Europe Limited}{June 2025 -- November 2025}
+      {AI Engineer Intern}{Stuttgart, Germany}
+      \vspace{-5pt}
+      \resumeItemListStart
+\resumeItem{Developed \textbf{AI agent orchestration infrastructure} for real-time voice systems using LangGraph-based pipelines, coordinating STT, LLM reasoning, and TTS synthesis with streaming responses and latency-aware pipeline control.}
+\resumeItem{Designed and implemented a \textbf{temporally-aware semantic retrieval service} using Python, TypeScript and Node.js with scalable backend microservices, MongoDB-backed storage, RESTful API boundaries, and automated evaluation workflows.}
+\resumeItem{Developed a \textbf{differentiable ML framework} integrating physical simulation with neural reconstruction, contributing to
+production-grade ML pipelines, monitoring, and performance optimization across \textbf{distributed compute clusters}
+(\textbf{SLURM}).}
+\resumeItem{Instrumented backend services with \textbf{Prometheus} metrics and \textbf{Grafana} dashboards to track per-service latency, throughput, and error rates, providing real-time observability across distributed inference workloads.}
+      \resumeItemListEnd
+      \vspace{7pt}
+
+\resumeSubheading
+  {Kontext.dev}{September 2025 -- October 2025}
+  {Software Engineer (AI / Full Stack)}{Freelance, Germany (Remote)}
+  \vspace{-5pt}
+  \resumeItemListStart
+\resumeItem{Built and deployed a \textbf{semantic retrieval microservice} over \textbf{Turbopuffer} using TypeScript and Node.js, implementing vector indexing, metadata-normalized schemas, and query-time filtering, reducing end-to-end inference latency by 50\%.}
+\resumeItem{Designed and integrated \textbf{Vault-backed} information stores into the SDK, enabling secure document ingestion, structured metadata management, and consistent retrieval flows across downstream AI services.}
+\resumeItem{Developed a \textbf{real-time avatar streaming} web application using Next.js, TypeScript, and React with LiveKit WebRTC integration, server-side JWT token generation via RESTful APIs, and WebSocket-based media transport for interactive virtual presence demos.}
+\resumeItem{Implemented end-to-end retrieval pipelines via \textbf{LangChain} including embedding generation, index lifecycle management, and API-layer orchestration, with \textbf{CI/CD-driven testing} and containerized deployments using \textbf{Docker, AWS, and Kubernetes}.}
+  \resumeItemListEnd
+\vspace{10pt}
+
+
+        \resumeSubheading
+      {Massachusetts General Hospital, Harvard Medical School}{August 2023 -- March 2024}
+      {AI Engineer}{Boston, Massachusetts, USA}
+      \vspace{-5pt}
+      \resumeItemListStart
+\resumeItem{Developed \textbf{real-time segmentation and object tracking pipelines} in \textbf{PyTorch} for robotic surgery video data, achieving 92\% IoU and 81--89\% IoU for multi-class anatomy segmentation using a memory-based \textbf{Transformer} architecture trained and fine-tuned on large-scale surgical \textbf{computer vision} datasets.}
+        \resumeItem{Built a \textbf{Visual Question Localized-Answering (VQLA)} module using \textbf{PyTorch} to detect and localize key anatomic features in surgical scenes via \textbf{cross-modal attention} between visual and language embeddings, integrating the multi-modal \textbf{computer vision} system into a query-driven interface.}
+      \resumeItemListEnd
+
+\vspace{8pt}
+\resumeSubheading
+  {Capgemini Technology Services India Limited}{September 2019 -- May 2022}
+  {Senior Full-Stack Engineer $|$ Finance Domain}{Bangalore, India}
+  \vspace{-5pt}
+  \resumeItemListStart
+\resumeItem{Designed and delivered \textbf{end-to-end backend features} across \textbf{Java (Spring Boot, Hibernate)} microservices, \textbf{JavaScript} frontends, and \textbf{PostgreSQL} databases, powering high-volume daily workflows for accounts payable, receivable, and general ledger teams across enterprise clients on \textbf{SAP ERP}.}
+    \resumeItem{Built \textbf{RESTful APIs} and \textbf{OData service} integrations bridging frontend interfaces with SAP ERP modules (FI/CO,
+MM), handling high-volume transactional workloads with strict data consistency across ledger reconciliation pipelines.}
+    % \resumeItem{Engineered event-driven flows using \textbf{Apache Kafka} for ledger and reconciliation events, with \textbf{Redis}-backed caching for hot lookups and JVM tuning (heap sizing, GC profiling) to sustain throughput under peak financial close workloads.}
+    \resumeItem{Diagnosed production data mismatches by tracing flows end-to-end from UI through API layer to database, applying targeted fixes that cut incident resolution time and improved financial reporting accuracy in SAP systems.}
+\resumeItem{Drove cross-functional collaboration with product, QA, and finance stakeholders --- owning code reviews, defining release criteria, and standardizing \textbf{CI/CD pipelines} with \textbf{Git}-based deployments across multi-environment landscapes.}
+  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{15pt}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+{\small
+  \resumeSubHeadingListStart
+  \vspace{5pt}
+  \resumeSubheading
+    {Ecole Polytechnique, France}{}
+    {Masters (M2) in Artificial Intelligence and Advanced Visual Computing; CGPA: 3.79}{}
+    \vspace{-3pt}
+  \resumeItemListStart
+    \resumeCourses{NLP, Deep Reinforcement Learning, Computer Graphics, Computer Vision}
+    \vspace{10pt}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Plaksha University}{}
+    {Post Graduate Diploma in AI, ML, and Leadership; CGPA: 8.98}{}
+    \vspace{-3pt}
+  \resumeItemListStart
+    \resumeCourses{Machine Learning, NLP, Computer Vision}
+  \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+}
+
+\vspace{15pt}
+%-----------PROGRAMMING SKILLS-----------
+\section{IT SKILLS}
+\vspace{5pt}
+\textbf{Backend}: Java (Spring Boot, Hibernate), TypeScript, Node.js, Python, FastAPI, RESTful APIs (OpenAPI), WebSockets, SSE, SQLAlchemy \\
+\textbf{Data \& Streaming}: Apache Kafka, Apache Spark, PyTorch, Scikit-learn, LangChain, Pandas, NumPy \\
+\textbf{Databases}: PostgreSQL, MongoDB, Redis, Elasticsearch, SQLite, ChromaDB \\
+\textbf{Frontend}: React, Next.js, HTML/CSS \\
+\textbf{Infrastructure \& Tools}: AWS, Kubernetes, Docker, Git, GitHub Actions (CI/CD), Nginx, Vitest, Pytest, Prometheus \\
+
+\vspace{-16pt}
+
+\end{document}
