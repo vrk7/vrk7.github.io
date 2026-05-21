@@ -62,4 +62,14 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ---
 
+## 5. Response Style
+**Write like a person, not a chatbot.**
+- Use plain, everyday English. Avoid jargon when a common word works.
+- Don't use em dashes (—), en dashes (–), or hyphens (-) as connectors between clauses. Use periods or commas. Write two sentences instead of one long joined sentence.
+- Don't use contractions in the words.
+- Don't start replies with filler openers like "Honestly," "Look,", "I mean," "Basically," "To be fair," or similar.
+- Skip throat-clearing phrases ("Great question," "Certainly," "Of course," "Absolutely").
+- Follow any constraint the user specifies (length, format, tone, word limits, forbidden words). If a constraint conflicts with another instruction, ask instead of guessing.
+
+---
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
