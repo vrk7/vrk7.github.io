@@ -63,6 +63,16 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+% Education-specific heading: school name bold, degree line plain
+\newcommand{\resumeEduheading}[4]{
+  \item
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{\small #2} \\
+    {\small #3} & {\small #4} \\
+  \end{tabularx}
+  \vspace{-3pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
   \Needspace{2\baselineskip}
   \item
@@ -176,7 +186,7 @@ production-grade ML pipelines, monitoring, and performance optimization across \
       \vspace{7pt}
 
 \resumeSubheading
-  {Kontext.dev}{September 2025 -- October 2025}
+  {Kontext.security}{September 2025 -- October 2025}
   {Software Engineer (AI / Full Stack)}{Freelance, Germany (Remote)}
   \vspace{-5pt}
   \resumeItemListStart
@@ -203,11 +213,9 @@ production-grade ML pipelines, monitoring, and performance optimization across \
   {Senior Full-Stack Engineer $|$ Finance Domain}{Bangalore, India}
   \vspace{-5pt}
   \resumeItemListStart
-\resumeItem{Designed and delivered \textbf{end-to-end backend features} across \textbf{Java (Spring Boot, Hibernate)} microservices, \textbf{JavaScript} frontends, and \textbf{PostgreSQL} databases, powering high-volume daily workflows for accounts payable, receivable, and general ledger teams across enterprise clients on \textbf{SAP ERP}.}
-    \resumeItem{Built \textbf{RESTful APIs} and \textbf{OData service} integrations bridging frontend interfaces with SAP ERP modules (FI/CO,
-MM), handling high-volume transactional workloads with strict data consistency across ledger reconciliation pipelines.}
-    % \resumeItem{Engineered event-driven flows using \textbf{Apache Kafka} for ledger and reconciliation events, with \textbf{Redis}-backed caching for hot lookups and JVM tuning (heap sizing, GC profiling) to sustain throughput under peak financial close workloads.}
-    \resumeItem{Diagnosed production data mismatches by tracing flows end-to-end from UI through API layer to database, applying targeted fixes that cut incident resolution time and improved financial reporting accuracy in SAP systems.}
+\resumeItem{Designed and delivered \textbf{end-to-end features} across \textbf{SAP ERP} (FI/CO, MM modules) with \textbf{SAP ABAP} backend logic and \textbf{JavaScript} frontends, powering high-volume accounts payable, receivable, and general ledger workflows for enterprise clients.}
+\resumeItem{Built and integrated \textbf{RESTful APIs} and \textbf{OData services} bridging JavaScript UIs with SAP ERP modules, implementing strict data consistency, transaction validation, and reconciliation logic across high-volume ledger pipelines.}
+\resumeItem{Diagnosed production data mismatches by tracing flows end-to-end from UI through API layer to database, applying targeted fixes that cut incident resolution time and improved financial reporting accuracy in SAP systems.}
 \resumeItem{Drove cross-functional collaboration with product, QA, and finance stakeholders --- owning code reviews, defining release criteria, and standardizing \textbf{CI/CD pipelines} with \textbf{Git}-based deployments across multi-environment landscapes.}
   \resumeItemListEnd
 
@@ -215,39 +223,30 @@ MM), handling high-volume transactional workloads with strict data consistency a
 \vspace{15pt}
 
 %-----------EDUCATION-----------
+%-----------EDUCATION-----------
 \section{EDUCATION}
-{\small
   \resumeSubHeadingListStart
   \vspace{5pt}
-  \resumeSubheading
-    {Ecole Polytechnique, France}{}
+  \resumeEduheading
+    {Ecole Polytechnique, France}{2024 -- 2025}
     {Masters (M2) in Artificial Intelligence and Advanced Visual Computing; CGPA: 3.79}{}
-    \vspace{-3pt}
-  \resumeItemListStart
-    \resumeCourses{NLP, Deep Reinforcement Learning, Computer Graphics, Computer Vision}
-    \vspace{10pt}
-  \resumeItemListEnd
-
-  \resumeSubheading
-    {Plaksha University}{}
+  \vspace{1pt}
+  \resumeEduheading
+    {Plaksha University}{2022 -- 2023}
     {Post Graduate Diploma in AI, ML, and Leadership; CGPA: 8.98}{}
-    \vspace{-3pt}
-  \resumeItemListStart
-    \resumeCourses{Machine Learning, NLP, Computer Vision}
-  \resumeItemListEnd
-
   \resumeSubHeadingListEnd
-}
 
-\vspace{15pt}
+\vspace{7pt}
 %-----------PROGRAMMING SKILLS-----------
 \section{IT SKILLS}
 \vspace{5pt}
-\textbf{Backend}: Java (Spring Boot, Hibernate), TypeScript, Node.js, Python, FastAPI, RESTful APIs (OpenAPI), WebSockets, SSE, SQLAlchemy \\
-\textbf{Data \& Streaming}: Apache Kafka, Apache Spark, PyTorch, Scikit-learn, LangChain, Pandas, NumPy \\
-\textbf{Databases}: PostgreSQL, MongoDB, Redis, Elasticsearch, SQLite, ChromaDB \\
+\textbf{Languages}: Python, TypeScript, Node.js \\
+\textbf{AI \& ML}: LangChain, LangGraph, PyTorch, Scikit-learn, Pandas, NumPy \\
+\textbf{Backend \& APIs}: FastAPI, RESTful APIs, WebSockets, SSE, SQLAlchemy \\
+\textbf{Databases \& Vector Stores}: PostgreSQL, MongoDB, Redis, ChromaDB, Elasticsearch \\
 \textbf{Frontend}: React, Next.js, HTML/CSS \\
-\textbf{Infrastructure \& Tools}: AWS, Kubernetes, Docker, Git, GitHub Actions (CI/CD), Nginx, Vitest, Pytest, Prometheus \\
+\textbf{Infrastructure}: AWS, Docker, Kubernetes, GitHub Actions (CI/CD), Nginx, Prometheus \\
+\textbf{Spoken Languages}: English (Fluent), German (A1) \\
 
 \vspace{-16pt}
 
