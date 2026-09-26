@@ -24,7 +24,7 @@ export const CONTACT_LINKS = [
   {
     id: 'cv',
     label: 'CV / Resume',
-    href: 'https://drive.google.com/file/d/1vhm37CIBvGqKGUTNoA0PgPiF5Po48CcB/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/1-15o9IVGZ4qGZcPMEVwUSD8IiwR7WFSD/view?usp=sharing',
   },
   { id: 'mail', label: 'Email', href: `mailto:${PROFILE.email}` },
 ] as const
